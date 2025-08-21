@@ -1,0 +1,75 @@
+body {
+background: url("images/mainbag.PNG") no-repeat center center;
+  background-size: cover; 
+  color: #fff;
+  font-family: "Courier New", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: url("images/formbag.PNG");
+  background-size: contain;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #370e18;
+  box-shadow: 0 0 50px rgba(215, 19, 120, 0.3);
+  width: 25em;
+  text-align: center;
+}
+
+
+h2 {
+  margin-bottom: 20px;
+  color: rgb(255, 0, 0);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  text-align: left;
+  font-size: 14px;
+  color: #bbb;
+}
+
+input {
+  margin-top: 5px;
+  padding: 10px;
+  width: 95%;
+  border: 2px solid #d71694;
+  border-radius: 8px;
+  background: #9b8c8c;
+  color: #1f0202;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: rgb(255, 0, 106);
+  box-shadow: 0 0 5px rgb(255, 0, 93);
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ff0080;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #ff0000;
+}
+
+#status {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
