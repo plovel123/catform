@@ -234,7 +234,7 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    margin-top: 220px;        /* или любое подходящее значение, чтобы сдвинуть под правила */
+    margin-top: 30%;        /* или любое подходящее значение, чтобы сдвинуть под правила */
     width: 90%;               /* ширина формы */
     max-width: 520px;
 }
