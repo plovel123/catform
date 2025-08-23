@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/submit"; // или http://localhost:3000/api/submit
+const API_URL = "http://185.106.95.89:3000/api/submit"; // или http://localhost:3000/api/submit
 
 const form = document.getElementById("whitelistForm");
 const status = document.getElementById("status");
