@@ -38,8 +38,8 @@ form.addEventListener("submit", async (e) => {
     });
     const json = await res.json();
     if (res.ok && json.success) {
-      status.textContent = "✅ Success. You are in the whitelist.";
-      status.style.color = "lime";
+      status.textContent = "✅ We will review your account for WL FCFS soon. Ty💖";
+      status.style.color = "black";
       form.reset();
     } else {
       status.textContent = "❌ " + (json.error || "Unknown error");
