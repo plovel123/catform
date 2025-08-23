@@ -229,6 +229,7 @@ body{
 
   /* форма — сдвигаем ниже правил */
    .wl-form {
+    top: 30%;
     position: absolute;  /* уже не absolute */
     inset: auto;
     display: flex;
