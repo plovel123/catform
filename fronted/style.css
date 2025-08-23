@@ -227,10 +227,11 @@ body{
   .rules-title { font-size: 16px; }
   .rules ol { font-size: 13px; line-height: 1.2; }
 
-  /* форма — делаем потоковой, чтобы влезала */
+  /* форма — сдвигаем ниже правил */
   .wl-form {
-    position: relative;
+    position: absolute;
     inset: auto;
+    top: 55%; /* сдвигаем форму ниже */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -239,20 +240,25 @@ body{
   }
 
   .wl-form input {
-    position: static;
-    transform: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     width: 90%;
     font-size: 16px;
     padding: 10px 14px;
+    box-shadow: none; /* убрали эффект свечения */
+    transition: none; /* убрали анимацию */
   }
 
   .send-btn {
-    position: static;
-    transform: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     width: 90%;
     padding: 10px 18px;
     font-size: 18px;
     margin-top: 6px;
+    transition: none; /* убрали анимацию при нажатии */
   }
 
   /* статус тоже меньше */
