@@ -237,6 +237,7 @@ body{
     margin-top: 40%;  /* верхний отступ 40%, горизонтально центр */
     width: 90%;
     max-width: 520px;
+    transform: translateX(-50%);
 }
 
 .wl-form input {
