@@ -1,75 +1,264 @@
-body {
-background: url("images/mainbag.PNG") no-repeat center center;
-  background-size: cover; 
-  color: #fff;
-  font-family: "Courier New", monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+@font-face{
+  font-family: "Compliance Sans";
+  src: url("fonts/Faithful.ttf") format("trueType");
+  font-display: swap;
+}
+
+:root{
+  --w: 800px;   
+  --h: 900px;
+  --scale: 0.72; 
+}
+
+/* фон сцены */
+body{
   margin: 0;
+  height: 100vh;
+  display: flex;              
+  align-items: center;       
+  justify-content: center;    
+  background: url("images/mainbag.PNG") center/cover no-repeat #0b0020;
+  font-family: "Compliance Sans", "Silkscreen", monospace;
 }
 
-.container {
-  background: url("images/formbag.PNG");
-  background-size: contain;
-  padding: 30px;
-  border-radius: 15px;
-  border: 2px solid #370e18;
-  box-shadow: 0 0 50px rgba(215, 19, 120, 0.3);
-  width: 25em;
+
+.stage{
+  width: calc(var(--w) * var(--scale));
+  height: calc(var(--h) * var(--scale));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  filter: drop-shadow(0 0 18px rgba(255,255,255,.5)) drop-shadow(0 0 36px rgba(255,255,255,.35));
+}
+
+
+.container{
+  position: relative;
+  width: calc(var(--w) * var(--scale));  
+  height: calc(var(--h) * var(--scale));  
+  transform: none;                         
+  background: url("images/formbag.PNG") center/100% 100% no-repeat;
+  border: 3px solid rgba(255,255,255,0.98);
+  border-radius: calc(28px * var(--scale));
+  box-shadow:
+    0 0 28px rgba(255,255,255,.95),
+    0 0 70px rgba(255,255,255,.45),
+    inset 0 0 26px rgba(255,255,255,.28);
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+
+.title{
+  position: absolute;
+  top: 2.5%;               
+  left: 50%;
+  transform: translateX(-50%);
+  width: 94%;
+  letter-spacing: 4px;
+  font-size: 96px;         
+  line-height: 0.9;
+  color: #ffffff;
   text-align: center;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 8px rgba(255,255,255,1),
+    0 0 18px rgba(255,255,255,0.9),
+    0 0 36px rgba(124, 220, 255, 0.85),
+    0 0 58px rgba(124, 220, 255, 0.6),
+    0 0 90px rgba(240, 0, 255, 0.55),
+    0 0 120px rgba(240, 0, 255, 0.45);
+  user-select: none;
+  pointer-events: none;
 }
 
 
-h2 {
-  margin-bottom: 20px;
-  color: rgb(255, 0, 0);
+.rules{
+  position: absolute;
+  top: 14.5%;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 68%;
+  background: rgba(255,255,255,.97);
+  border: 2px solid #111;
+  border-radius: 22px;
+  padding: 14px 18px;
+  box-shadow:
+    0 6px 0 rgba(0,0,0,0.12),
+    0 0 16px rgba(255,255,255,.8);
+  color: #111;
+  z-index: 50;          
+  pointer-events: auto;  
+  will-change: transform, top, left;
+  backface-visibility: hidden;
+  transform: translateX(-50%) translateZ(0) rotate(-2deg); /* translateZ ускоряет рендер */
+  transition: none; /* отключаем анимацию при ресайзе */
+  -webkit-transform: translateX(-50%) translateZ(0) rotate(-2deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: none;
 }
-
-label {
-  display: block;
-  margin-top: 15px;
-  text-align: left;
-  font-size: 14px;
-  color: #bbb;
+.rules-title{
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 6px;
 }
-
-input {
-  margin-top: 5px;
-  padding: 10px;
-  width: 95%;
-  border: 2px solid #d71694;
-  border-radius: 8px;
-  background: #9b8c8c;
-  color: #1f0202;
-  font-size: 14px;
+.rules ol{
+  margin: 0;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 1.25;
 }
-
-input:focus {
-  outline: none;
-  border-color: rgb(255, 0, 106);
-  box-shadow: 0 0 5px rgb(255, 0, 93);
-}
-
-button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #ff0080;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
+.rules a {
+  color: #8a0aff;
+  text-decoration: underline;
+  border-bottom: 2px solid #8a0aff44;
+  pointer-events: auto;
   cursor: pointer;
-  transition: all 0.2s;
 }
 
-button:hover {
-  background: #ff0000;
+.wl-form{
+  position: absolute;
+  inset: 0;
+  z-index: 20; 
 }
 
-#status {
-  margin-top: 15px;
-  font-size: 14px;
-  font-weight: bold;
+
+.wl-form input{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+  padding: 12px 18px;
+  font-size: 18px;
+  text-align: center;
+  color: #111;
+  background: #ffffff;
+  border: 2px solid #fff;
+  border-radius: 18px;
+  box-shadow:
+    0 0 16px rgba(255,255,255,.95),
+    inset 0 0 10px rgba(255,255,255,.8);
+  outline: none;
+  transition: box-shadow .15s ease, transform .1s ease;
+  z-index: 21; 
+}
+.wl-form input:focus{
+  box-shadow:
+    0 0 28px rgba(255,255,255,1),
+    inset 0 0 14px rgba(255,255,255,.95);
+  transform: translateX(-50%) scale(1.01);
+}
+
+#twitter{    top: 34%; }    
+#reply_link{ top: 45.5%; }  
+#wallet{     top: 56.5%; }   
+
+
+.send-btn{
+  position: absolute;
+  left: 50%;
+  bottom: 25%;   
+  transform: translateX(-50%);
+  padding: 14px 46px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+
+  background: linear-gradient(90deg, #ff0038 0%, #ff4d4d 50%, #ff3366 100%);
+  border: 2px solid rgba(255,255,255,0.9);
+  border-radius: 18px;
+  cursor: pointer;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  box-shadow:
+    0 0 30px rgba(255,50,80,0.95),
+    0 0 60px rgba(255,40,60,0.6),
+    inset 0 0 8px rgba(255,255,255,0.45);
+  transition: transform .08s ease, box-shadow .15s ease;
+  user-select: none;
+  z-index: 7;
+}
+.send-btn:hover{
+  box-shadow:
+    0 0 40px rgba(255,50,80,1),
+    0 0 80px rgba(255,40,60,0.85);
+  transform: translateX(-50%) scale(1.03);
+}
+.send-btn:active{
+  transform: translateX(-50%) scale(.98);
+}
+
+
+.status{
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  pointer-events: none;
+}
+
+
+@media (max-width: 480px){
+  :root{ --scale: 0.6; }
+}
+@media (max-width: 640px) {
+  /* принудительно делаем inputs и кнопку потоковыми и центрированными */
+  .wl-form input,
+  .wl-form .send-btn {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 92% !important;
+    margin: 6px auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Убираем любые фокус-трансформации, которые могли быть у инпутов */
+  .wl-form input:focus,
+  .wl-form input:active {
+    transform: none !important;
+    left: auto !important;
+    outline: none !important;
+    margin-left: 0 !important;
+  }
+
+  /* Кнопка — тоже потоковая, не абсолютная */
+  .send-btn {
+    display: block !important;
+    width: 72% !important;
+    margin: 10px auto 12px auto !important;
+    bottom: auto !important;
+    box-shadow: 0 10px 30px rgba(255,50,80,0.95) !important;
+  }
+
+  /* Защитим rules и title, чтобы они не пересекались при изменении высоты из-за клавиатуры */
+  .title { position: relative !important; z-index: 120; }
+  .rules { position: relative !important; z-index: 60; width: 100% !important; }
+
+  /* Общая рекомендация: убрать тяжёлые тени при фокусе на мобильных, если возникают лаги */
+  .wl-form input, .send-btn {
+    transition: box-shadow .12s ease, background .12s ease !important;
+  }
+
+  /* Специально для проблемных браузеров — подстраховка */
+  input, button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    touch-action: manipulation;
+  }
+}
+
+/* Доп. маленький breakpoint */
+@media (max-width: 380px) {
+  .wl-form input { width: 94% !important; font-size: 15px; padding: 10px; }
+  .send-btn { width: 82% !important; font-size: 16px; padding: 12px; }
 }
