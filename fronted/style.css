@@ -229,7 +229,6 @@ body{
 
   /* форма — делаем потоковой, чтобы влезала */
   .wl-form {
-    top:30%;
     position: relative;
     inset: auto;
     display: flex;
@@ -241,6 +240,7 @@ body{
 
   .wl-form input {
     position: static;
+    top:20%;
     transform: none;
     width: 90%;
     font-size: 16px;
