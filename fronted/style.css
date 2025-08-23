@@ -234,7 +234,7 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    margin: 40% 0 0 0;  /* верхний отступ 40%, горизонтально центр */
+    margin-top: 40%;  /* верхний отступ 40%, горизонтально центр */
     width: 90%;
     max-width: 520px;
 }
