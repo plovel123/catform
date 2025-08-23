@@ -205,3 +205,34 @@ body{
 }
 
 
+@media (max-width: 640px) {
+  .wl-form {
+    max-width: 95%;
+    padding: 18px;
+    border-radius: 18px;
+    transform: scale(0.92);   /* чуть уменьшаем форму */
+  }
+
+  .wl-form .title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .wl-form input,
+  .wl-form .send-btn {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+/* Совсем маленькие экраны */
+@media (max-width: 380px) {
+  .wl-form {
+    transform: scale(0.85);   /* ещё меньше */
+    padding: 14px;
+  }
+
+  .wl-form .title {
+    font-size: 20px;
+  }
+}
