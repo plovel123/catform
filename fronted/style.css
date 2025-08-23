@@ -90,9 +90,9 @@ body{
   pointer-events: auto;  
   will-change: transform, top, left;
   backface-visibility: hidden;
-  transform: translateX(-50%) translateZ(0) rotate(-2deg);
+  transform: translateX(-50%) translateZ(0) ;
   transition: none; 
-  -webkit-transform: translateX(-50%) translateZ(0) rotate(-2deg);
+  -webkit-transform: translateX(-50%) translateZ(0) ;
   -webkit-backface-visibility: hidden;
   -webkit-transition: none;
 }
@@ -229,7 +229,7 @@ body{
 
   /* форма — сдвигаем ниже правил */
    .wl-form {
-    position: relative;  /* уже не absolute */
+    position: absolute;  /* уже не absolute */
     inset: auto;
     display: flex;
     flex-direction: column;
