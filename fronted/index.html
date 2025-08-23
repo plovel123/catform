@@ -7,12 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Вся сцена масштабируется, чтобы форма была поменьше -->
   <div class="stage">
     <div class="container">
       <div class="title">CUTTESTS</div>
-
-      <!-- "облачко" с правилами как на макете -->
       <div class="rules">
         <div class="rules-title">WHITE FORM</div>
         <ol>
@@ -23,14 +20,12 @@
           </li>
         </ol>
       </div>
-
       <form id="whitelistForm" class="wl-form">
         <input type="text" id="twitter" name="twitter" placeholder="@username" required>
         <input type="url" id="reply_link" name="reply_link" placeholder="Reply link (https://x.com/...)" required>
         <input type="text" id="wallet" name="wallet" placeholder="0x..." pattern="0x[a-fA-F0-9]{40}" required>
         <button type="submit" class="send-btn">SEND</button>
       </form>
-
       <p id="status" class="status"></p>
     </div>
   </div>
