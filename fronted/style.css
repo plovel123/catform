@@ -228,35 +228,37 @@ body{
   .rules ol { font-size: 13px; line-height: 1.2; }
 
   /* форма — сдвигаем ниже правил */
-  .wl-form {
-    position: absolute;
+   .wl-form {
+    position: relative;  /* уже не absolute */
     inset: auto;
-    top: 55%; /* сдвигаем форму ниже */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    padding: 12px 0;
+    gap: 12px;
+    margin-top: 16px;    /* отступ от правил */
+    width: 100%;
   }
 
   .wl-form input {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    font-size: 16px;
+    position: static;
+    transform: none;
+    width: 90%;          /* займёт 90% от контейнера */
+    max-width: 520px;    /* ограничение, чтобы не растягивалось */
     padding: 10px 14px;
+    font-size: 16px;
+    box-shadow: none;    /* убрали свечение */
+    transition: none;    /* без анимации */
   }
 
   .send-btn {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    transform: none;
     width: 90%;
+    max-width: 520px;
     padding: 10px 18px;
     font-size: 18px;
     margin-top: 6px;
-    transition: none; /* убрали анимацию при нажатии */
+    transition: none;    /* без анимации */
   }
 
   /* статус тоже меньше */
