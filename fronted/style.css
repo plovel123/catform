@@ -243,11 +243,9 @@ body{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
+    width: 60%;
     font-size: 16px;
     padding: 10px 14px;
-    box-shadow: none; /* убрали эффект свечения */
-    transition: none; /* убрали анимацию */
   }
 
   .send-btn {
