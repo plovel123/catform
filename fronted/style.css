@@ -245,7 +245,7 @@ body{
 .wl-form input {
     position: relative;        /* убрали static */
     transform: none !important; /* убрали любые смещения */
-    width: 100%;               /* займёт всю ширину родителя */
+    width: 60%;               /* займёт всю ширину родителя */
     max-width: 520px;
     padding: 10px 14px;
     font-size: 16px;
@@ -256,7 +256,7 @@ body{
 .send-btn {
     position: relative;
     transform: none !important;
-    width: 100%;               /* тоже центр по родителю */
+    width: 30%;               /* тоже центр по родителю */
     max-width: 520px;
     padding: 10px 18px;
     font-size: 18px;
