@@ -38,7 +38,7 @@ form.addEventListener("submit", async (e) => {
     });
     const json = await res.json();
     if (res.ok && json.success) {
-      status.textContent = "✅ We will review your account for WL FCFS soon. Ty💖";
+      status.textContent = "✅ In review. TY ❤️";
       status.style.color = "black";
       form.reset();
     } else {
