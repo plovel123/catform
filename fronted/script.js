@@ -1,4 +1,4 @@
-const API_URL = "http://185.106.95.89:3000/api/submit"; // или http://localhost:3000/api/submit
+const API_URL = "https://api.cuttests.xyz/api/submit"; // или http://localhost:3000/api/submit
 
 const form = document.getElementById("whitelistForm");
 const status = document.getElementById("status");
@@ -50,3 +50,40 @@ form.addEventListener("submit", async (e) => {
     status.style.color = "red";
   }
 });
+const checkWLBtn = document.getElementById("checkWLBtn");
+const modal = document.getElementById("wlModal");
+const closeModal = document.querySelector(".modal .close");
+const checkBtn = document.getElementById("checkBtn");
+const checkWalletInput = document.getElementById("checkWallet");
+const checkStatus = document.getElementById("checkStatus");
+
+checkWLBtn.onclick = () => modal.style.display = "block";
+closeModal.onclick = () => modal.style.display = "none";
+window.onclick = e => { if(e.target==modal) modal.style.display="none"; }
+
+checkBtn.onclick = async () => {
+  const wallet = checkWalletInput.value.trim();
+  if(!/^0x[a-fA-F0-9]{40}$/.test(wallet)){
+    checkStatus.textContent = "❌ Invalid wallet";
+    checkStatus.style.color = "red";
+    return;
+  }
+  checkStatus.textContent = "⏳ Checking...";
+  checkStatus.style.color = "black";
+
+  try {
+    const res = await fetch(`/api/check-wl?wallet=${wallet}`);
+    const json = await res.json();
+    if(json.found){
+      checkStatus.textContent = "✅ You are on the list";
+      checkStatus.style.color = "green";
+    } else {
+      checkStatus.textContent = "❌ You are not on the list";
+      checkStatus.style.color = "red";
+    }
+  } catch {
+    checkStatus.textContent = "❌ Network error";
+    checkStatus.style.color = "red";
+  }
+}
+
