@@ -423,7 +423,7 @@ position: absolute;        /* фиксированное положение */
     transition: none;
 }
 .game-btn .check-btn{
-   position: relative;
+   position: absolute;
     transform: none !important;
     width: 30%;              
     max-width: 520px;
