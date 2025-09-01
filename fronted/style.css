@@ -425,14 +425,25 @@ position: absolute;        /* фиксированное положение */
 .game-btn {
    position: absolute;
     transform: none !important;
-    width: 30%;              
+    width: 30%;  
+    bottom: 10%;   
+    left: 10%;            
     max-width: 520px;
     padding: 10px 18px;
     font-size: 18px;
-    margin-top: 6px;
     transition: none;
 }
-
+.check-btn{
+    position: absolute;
+      transform: none !important;
+      width: 30%;   
+      bottom: 10%; 
+      left: 90%;          
+      max-width: 520px;
+      padding: 10px 18px;
+      font-size: 18px;
+      transition: none;
+}
  
   .status {
     font-size: 18px;
