@@ -72,7 +72,7 @@ checkBtn.onclick = async () => {
   checkStatus.style.color = "black";
 
   try {
-    const res = await fetch(`/api/check-wl?wallet=${wallet}`);
+    const res = await fetch(`https://api.cuttests.xyz/api/check-wl?wallet=${wallet}`);
     const json = await res.json();
     if(json.found){
       checkStatus.textContent = "✅ You are on the list";
