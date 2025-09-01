@@ -427,7 +427,7 @@ position: absolute;        /* фиксированное положение */
     transform: none !important;
     width: 15%;  
     bottom: 0%;   
-    right:  23%;            
+    right:  -30%;            
     max-width: 200px;
     padding: 10px 18px;
     font-size: 18px;
