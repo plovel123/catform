@@ -422,7 +422,7 @@ position: absolute;        /* фиксированное положение */
     margin-top: 6px;
     transition: none;
 }
-.game-btn .check-btn{
+.game-btn {
    position: absolute;
     transform: none !important;
     width: 30%;              
