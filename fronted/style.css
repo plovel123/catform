@@ -426,8 +426,7 @@ position: absolute;        /* фиксированное положение */
    position: absolute;
     transform: none !important;
     width: 15%;  
-    bottom: -58%;   
-    left:  -30%;            
+    bottom: -58%;             
     max-width: 520px;
     padding: 10px 18px;
     font-size: 18px;
