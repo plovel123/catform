@@ -425,7 +425,7 @@ position: absolute;        /* фиксированное положение */
 .game-btn {
    position: absolute;
     transform: none !important;
-    width: 30%;  
+    width: 20%;  
     bottom: 0%;   
     left:  40%;            
     max-width: 200px;
