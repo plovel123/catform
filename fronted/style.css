@@ -436,7 +436,7 @@ position: absolute;        /* фиксированное положение */
 .check-btn{
     position: absolute;
       transform: none !important;
-      width: 30%;   
+      width: 27%;   
       bottom: -58%; 
       left: 125%;          
       max-width: 520px;
