@@ -225,7 +225,7 @@ position: absolute;        /* фиксированное положение */
   bottom: 7%;
   transform: translateX(-50%);
   margin: 0;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: #fff;
   text-shadow: 0 0 10px #fff, 0 0 20px #fff;
@@ -271,7 +271,7 @@ position: absolute;        /* фиксированное положение */
   box-shadow: 0 0 14px rgba(255,255,255,0.8);
   outline: none;
   transition: box-shadow .15s ease, transform .1s ease;
-  z-index: 21; 
+  z-index: 1001; 
 }
 .checkBtn{
   font-family: "Compliance Sans", "Silkscreen", monospace;
@@ -279,7 +279,7 @@ position: absolute;        /* фиксированное положение */
   left: 50%;
   bottom: 15%;
   transform: translateX(-50%);
-  z-index: 1000;    
+  z-index: 1001;    
   padding: 14px 32px;
   font-size: 18px;
   font-weight: 800;
@@ -305,31 +305,39 @@ position: absolute;        /* фиксированное положение */
 .checkBtn:active{
   transform: translateX(-50%) scale(.97);
 }
-.check-btn {
-   font-family: "Compliance Sans", "Silkscreen", monospace;
+.check-btn{
+  font-family: "Compliance Sans", "Silkscreen", monospace;
   position: absolute;
   left: 90%;
   bottom: 5%;
   transform: translateX(-90%);
-  z-index: 1000;    
-  padding: 14px 32px;
+  z-index: 1000;
+
+  display: inline-flex;           /* гибкое центрирование текста */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;            /* запретить перенос строки */
+  gap: 8px;                       /* если будут иконки — расстояние */
+
+  min-width: 130px;               /* минимальная ширина, можно подкорректировать */
+  padding: 12px 28px;             /* чуть уменьшил padding для баланса */
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 1px;
   color: #000;
+
   background: linear-gradient(90deg, #28a745 0%, #5cd65c 50%, #28a745 100%);
   border: 2px solid rgba(255,255,255,0.7);
   border-radius: 18px;
   cursor: pointer;
-  text-decoration: none;          
+  text-decoration: none;
   text-shadow: none;
   box-shadow: 0 0 12px rgba(40,167,69,0.7);
   transition: transform .08s ease, box-shadow .15s ease;
-  z-index: 7;
   user-select: none;
-  z-index: 1000;
   touch-action: manipulation;
 }
+
 .check-btn:hover{
   box-shadow: 0 0 24px rgba(40,167,69,1);
   transform: translateX(-90%) scale(1.02);
@@ -447,7 +455,7 @@ position: absolute;        /* фиксированное положение */
  
   .status {
     font-size: 18px;
-    bottom: 4%;
+    bottom: 14%;
   }
    .modal-content input, .modal-content button {
     width: 90%;
